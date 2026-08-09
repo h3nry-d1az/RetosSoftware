@@ -7,6 +7,7 @@ números reales x e y, se cumple la relación
   ||x| - |y|| ≤ |x - y|.
 
 Propuesto por José A. Alonso Jiménez.
+Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 -/
 
 theorem Reto13 {x y : ℝ} : |(|x| - |y|)| ≤ |x - y| := by
@@ -49,3 +50,5 @@ theorem Reto13 {x y : ℝ} : |(|x| - |y|)| ≤ |x - y| := by
         add_comm,
         ← sub_eq_add_neg,
         neg_sub]
+
+#check Reto13
