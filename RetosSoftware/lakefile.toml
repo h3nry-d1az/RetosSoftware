@@ -1,0 +1,6 @@
+name = "RetosSoftware"
+defaultTargets = ["RetosSoftware"]
+
+[[lean_lib]]
+name = "RetosSoftware"
+roots = ["Reto13", "Reto14"]

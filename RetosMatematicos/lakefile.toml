@@ -1,0 +1,6 @@
+name = "RetosMatematicos"
+defaultTargets = ["RetosMatematicos"]
+
+[[lean_lib]]
+name = "RetosMatematicos"
+roots = ["Reto20260715"]
