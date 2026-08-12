@@ -21,8 +21,7 @@ theorem pseudoendomorphism_not_endomorphism_existence {G : Type*} [Group G]
   ↔ (∃ g : G, g ≠ 1 ∧ g * g = 1)
   := by
   apply Iff.intro
-  · intro ⟨φ, hφ⟩
-    obtain ⟨hφ_pseudo, hφ_not_endo⟩ := hφ
+  · intro ⟨φ, hφ_pseudo, hφ_not_endo⟩
     use φ (1)
     apply And.intro
     · intro hφ_1_eq_1
@@ -69,18 +68,27 @@ theorem Reto20260715_a {G : Type*} [Group G] [Fintype G]
   : ¬ (∃ φ : G → G, (∀ (x y z : G), φ (x * y * z) = φ (x) * φ (y) * φ (z))
         ∧ (∃ (x y : G), φ (x * y) ≠ φ (x) * φ (y)))
   := by
-    sorry
-    -- intro hφ
-    -- obtain ⟨g, hg⟩ := pseudoendomorphism_not_endomorphism_existence.mp hφ
-    -- have order_g_eq_two : orderOf g = 2 := by sorry
-    -- have two_dvd_order_G : 2 ∣ Fintype.card G := orderOf_dvd_card g
+    intro hφ
+    obtain ⟨g, hg1, hg2⟩ := pseudoendomorphism_not_endomorphism_existence.mp hφ
+    exact hG (by
+      -- he aquí el teorema de Lagrange
+      have h' : orderOf g ∣ Fintype.card G := orderOf_dvd_card
+      rw [← sq] at hg2
+      rw [orderOf_eq_prime hg2 hg1] at h'
+      exact h')
 
 theorem Reto20260715_b {G : Type*} [Group G] [Fintype G]
   (hG : 2 ∣ Fintype.card G)
   : (∃ φ : G → G, (∀ (x y z : G), φ (x * y * z) = φ (x) * φ (y) * φ (z))
       ∧ (∃ (x y : G), φ (x * y) ≠ φ (x) * φ (y)))
   := by
-    sorry
+    apply pseudoendomorphism_not_endomorphism_existence.mpr
+    -- y aquí el teorema de Cauchy
+    obtain ⟨g, hg⟩ := exists_prime_orderOf_dvd_card 2 hG
+    use g
+    obtain ⟨h1, h2⟩ := orderOf_eq_prime_iff.mp hg
+    rw [← sq]
+    exact ⟨h2, h1⟩
 
 #check pseudoendomorphism_not_endomorphism_existence
 #check Reto20260715_a
