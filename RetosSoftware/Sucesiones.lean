@@ -6,7 +6,7 @@ Matemático'' de análisis.
 -/
 
 def LimSuc (a : ℕ → ℝ) (L : ℝ) : Prop :=
-  ∀ ε, ∃ k, ∀ n ≥ k, |a n - L| < ε
+  ∀ ε > 0, ∃ k : ℕ, ∀ n ≥ k, |a n - L| < ε
 
 def SucConvergente (a : ℕ → ℝ) : Prop :=
   ∃ L, LimSuc a L

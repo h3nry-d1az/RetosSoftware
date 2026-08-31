@@ -31,7 +31,7 @@ lemma abs_sub_le_abs_le_max {a b c : ℝ} (h : |a - b| < c)
 
 theorem Reto17 {a : ℕ → ℝ} (ha : SucConvergente a) : SucAcotada a := by
   obtain ⟨L, hL⟩ := ha
-  obtain ⟨k, hk⟩ := hL 1
+  obtain ⟨k, hk⟩ := hL 1 (by norm_num)
   let S := (Finset.range k.succ).image (abs ∘ a) -- S := {|aₙ| : n ≤ k}
   let M₁ := S.max' ⟨|a 0|, by
     rw [Finset.mem_image]
