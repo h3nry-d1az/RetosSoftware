@@ -1,6 +1,7 @@
-name = "RetosSoftwareMatematico"
+name = "RetosSoftware"
 version = "0.1.0"
 keywords = ["math"]
+defaultTargets = ["RetosSoftware"]
 
 [leanOptions]
 pp.unicode.fun = true
@@ -8,18 +9,10 @@ relaxedAutoImplicit = false
 weak.linter.mathlibStandardSet = true
 maxSynthPendingDepth = 3
 
-[[lean_lib]]
-name = "RetosSoftwareMatematico"
-
 [[require]]
 name = "mathlib"
 scope = "leanprover-community"
-rev = "v4.32.2"
+rev = "v4.33.1"
 
-[[require]]
+[[lean_lib]]
 name = "RetosSoftware"
-path = "RetosSoftware"
-
-[[require]]
-name = "RetosMatematicos"
-path = "RetosMatematicos"
