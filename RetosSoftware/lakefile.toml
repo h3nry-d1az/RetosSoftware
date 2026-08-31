@@ -3,4 +3,11 @@ defaultTargets = ["RetosSoftware"]
 
 [[lean_lib]]
 name = "RetosSoftware"
-roots = ["Reto13", "Reto14"]
+roots = [
+    "Sucesiones",
+    "Reto13",
+    "Reto14",
+    "Reto15",
+    "Reto16",
+    "Reto17",
+]
