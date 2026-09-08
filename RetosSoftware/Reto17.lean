@@ -23,7 +23,7 @@ M₁ := máx {|aₙ| : n < k}.
 Finalmente, para que ambas desigualdades se cumplan se elige M := máx(M₁, M₂).
 -/
 
-lemma abs_sub_le_abs_le_max {a b c : ℝ} (h : |a - b| < c)
+lemma abs_sub_le_of_abs_le_max {a b c : ℝ} (h : |a - b| < c)
   : |a| ≤ max |b - c| |b + c|
   := by
   obtain ⟨h₁, h₂⟩ := abs_sub_lt_iff.mp h -- |a - b| < c ⊢ b - c < a < b + c
@@ -56,6 +56,6 @@ theorem Reto17 {a : ℕ → ℝ} (ha : SucConvergente a) : SucAcotada a := by
       apply Nat.lt_succ_iff.mpr
       exact Nat.le_of_lt hn
     · rfl
-  · exact le_max_of_le_right (abs_sub_le_abs_le_max (hk n hn))
+  · exact le_max_of_le_right (abs_sub_le_of_abs_le_max (hk n hn))
 
 #check Reto17
