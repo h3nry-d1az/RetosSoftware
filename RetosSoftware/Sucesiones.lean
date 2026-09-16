@@ -13,3 +13,6 @@ def SucConvergente (a : ℕ → ℝ) : Prop :=
 
 def SucAcotada (a : ℕ → ℝ) : Prop :=
   ∃ M, ∀ n, |a n| ≤ M
+
+def SucCauchy (a : ℕ → ℝ) : Prop :=
+  ∀ ε > 0, ∃ N : ℕ, ∀ p ≥ N, ∀ q ≥ N, |a p - a q| < ε
