@@ -1,6 +1,6 @@
 import Mathlib.Tactic
 
-/--
+/-!
 Demostrar que para todo n ∈ ℕ, 2n + 9 ≤ 2ⁿ⁺⁴
 
 Propuesto por José A. Alonso Jiménez.

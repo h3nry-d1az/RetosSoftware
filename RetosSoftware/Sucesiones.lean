@@ -1,6 +1,6 @@
 import Mathlib.Data.Real.Basic
 
-/--
+/-!
 Definiciones varias sobre sucesiones, empleadas en los ``Retos Software
 Matemático'' de análisis.
 -/
@@ -13,6 +13,9 @@ def SucConvergente (a : ℕ → ℝ) : Prop :=
 
 def SucAcotada (a : ℕ → ℝ) : Prop :=
   ∃ M, ∀ n, |a n| ≤ M
+
+def CotaSup (a : ℕ → ℝ) (M : ℝ) : Prop :=
+  ∀ n, a n ≤ M
 
 def SucCauchy (a : ℕ → ℝ) : Prop :=
   ∀ ε > 0, ∃ N : ℕ, ∀ p ≥ N, ∀ q ≥ N, |a p - a q| < ε

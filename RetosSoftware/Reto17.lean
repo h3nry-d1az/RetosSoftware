@@ -1,7 +1,7 @@
 import RetosSoftware.Sucesiones
 import Mathlib.Tactic
 
-/--
+/-!
 Demostrar que las sucesiones convergentes están acotadas; es decir, que si
 existe un L ∈ ℝ tal que L es el límite de la sucesión aₙ, entonces existe un
 M ∈ ℝ tal que para todo n ∈ ℕ, |aₙ| ≤ M.

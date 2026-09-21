@@ -1,6 +1,6 @@
 import Mathlib.Tactic
 
-/--
+/-!
 Demostrar que existe un k ∈ ℕ tal que para todo n ∈ ℕ
   (n + k)² ≤ 2ⁿ⁺ᵏ
 

@@ -1,7 +1,7 @@
 import RetosSoftware.Reto17
 import Mathlib.Tactic
 
-/--
+/-!
 Demostrar que que si la sucesión aₙ converge a L y bₙ converge a M, entonces
 aₙbₙ converge a LM.
 

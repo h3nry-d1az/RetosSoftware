@@ -1,7 +1,7 @@
 import RetosSoftware.Sucesiones
 import Mathlib.Tactic
 
-/--
+/-!
 Demostrar que las sucesiones convergentes son de Cauchy.
 
 Propuesto por José A. Alonso Jiménez.
