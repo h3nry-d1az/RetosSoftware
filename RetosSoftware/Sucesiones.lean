@@ -19,3 +19,7 @@ def CotaSup (a : ℕ → ℝ) (M : ℝ) : Prop :=
 
 def SucCauchy (a : ℕ → ℝ) : Prop :=
   ∀ ε > 0, ∃ N : ℕ, ∀ p ≥ N, ∀ q ≥ N, |a p - a q| < ε
+
+def SubSucesion (v u : ℕ → ℝ) :=
+  ∃ φ, StrictMono φ ∧ v = u ∘ φ
+
