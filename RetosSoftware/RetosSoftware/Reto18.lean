@@ -1,4 +1,4 @@
-import RetosSoftware.Reto17
+import RetosSoftware.RetosSoftware.Reto17
 import Mathlib.Tactic
 
 /-!

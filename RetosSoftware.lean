@@ -1,13 +1,15 @@
-import RetosSoftware.Reto9
-import RetosSoftware.Reto13
-import RetosSoftware.Reto14
-import RetosSoftware.Reto15
-import RetosSoftware.Reto16
-import RetosSoftware.Reto17
-import RetosSoftware.Reto18
-import RetosSoftware.Reto19
-import RetosSoftware.Reto20
-import RetosSoftware.Reto21
-import RetosSoftware.Reto22
+import RetosSoftware.RetosSoftware.Reto9
+import RetosSoftware.RetosSoftware.Reto13
+import RetosSoftware.RetosSoftware.Reto14
+import RetosSoftware.RetosSoftware.Reto15
+import RetosSoftware.RetosSoftware.Reto16
+import RetosSoftware.RetosSoftware.Reto17
+import RetosSoftware.RetosSoftware.Reto18
+import RetosSoftware.RetosSoftware.Reto19
+import RetosSoftware.RetosSoftware.Reto20
+import RetosSoftware.RetosSoftware.Reto21
+import RetosSoftware.RetosSoftware.Reto22
 
-import RetosSoftware.Reto20260715
+import RetosSoftware.RetosMatematicos.Reto20260715
+
+import RetosSoftware.LigaMatematica.Jornada1.P3

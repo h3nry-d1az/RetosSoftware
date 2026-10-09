@@ -1,6 +1,6 @@
-import RetosSoftware.Sucesiones
-import RetosSoftware.Reto9
-import RetosSoftware.Reto21
+import RetosSoftware.RetosSoftware.Sucesiones
+import RetosSoftware.RetosSoftware.Reto9
+import RetosSoftware.RetosSoftware.Reto21
 import Mathlib.Tactic
 
 /-!
@@ -36,4 +36,3 @@ theorem Reto22 {a b₁ b₂ : ℕ → ℝ} {L₁ L₂ : ℝ}
   exact Eq.trans hLL₁.symm hLL₂
 
 #check Reto22
-

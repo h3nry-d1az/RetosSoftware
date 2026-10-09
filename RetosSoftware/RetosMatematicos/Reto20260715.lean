@@ -4,8 +4,8 @@ import Mathlib.Tactic
 Sea G un grupo finito de orden n. Una función φ: G → G es un pseudoendomorfismo
 si φ(xyz) = φ(x)φ(y)φ(z) para cualesquiera x, y, z ∈ G.
 
-a) Si n es impar, demuéstrese que todo pseudoendomorfismo es un endomorfismo.
-b) En el caso general, ¿es todo pseudoendomorfismo un endomorfismo?
+1. Si n es impar, demuéstrese que todo pseudoendomorfismo es un endomorfismo.
+2. En el caso general, ¿es todo pseudoendomorfismo un endomorfismo?
 
 Propuesto en la Olimpiada Matemática de Rumanía (2019): duodécimo grado, ronda
 de distritos, problema 1.
@@ -15,11 +15,10 @@ Para una solución en lenguaje natural, véase mi solución en el canal de
 Telegram «Retos Matemáticos»: https://t.me/Retos_Matematicos/1/141633.
 -/
 
-theorem pseudoendomorphism_not_endomorphism_existence {G : Type*} [Group G]
+theorem exists_pseudoendo_not_endo {G : Type*} [Group G]
   : (∃ φ : G → G, (∀ (x y z : G), φ (x * y * z) = φ (x) * φ (y) * φ (z))
     ∧ (∃ (x y : G), φ (x * y) ≠ φ (x) * φ (y)))
-  ↔ (∃ g : G, g ≠ 1 ∧ g * g = 1)
-  := by
+  ↔ (∃ g : G, g ≠ 1 ∧ g * g = 1) := by
   apply Iff.intro
   · intro ⟨φ, hφ_pseudo, hφ_not_endo⟩
     use φ (1)
@@ -69,7 +68,7 @@ theorem Reto20260715_a {G : Type*} [Group G] [Fintype G]
         ∧ (∃ (x y : G), φ (x * y) ≠ φ (x) * φ (y)))
   := by
     intro hφ
-    obtain ⟨g, hg1, hg2⟩ := pseudoendomorphism_not_endomorphism_existence.mp hφ
+    obtain ⟨g, hg1, hg2⟩ := exists_pseudoendo_not_endo.mp hφ
     exact hG (by
       -- he aquí el teorema de Lagrange
       have h' : orderOf g ∣ Fintype.card G := orderOf_dvd_card
@@ -82,7 +81,7 @@ theorem Reto20260715_b {G : Type*} [Group G] [Fintype G]
   : (∃ φ : G → G, (∀ (x y z : G), φ (x * y * z) = φ (x) * φ (y) * φ (z))
       ∧ (∃ (x y : G), φ (x * y) ≠ φ (x) * φ (y)))
   := by
-    apply pseudoendomorphism_not_endomorphism_existence.mpr
+    apply exists_pseudoendo_not_endo.mpr
     -- y aquí el teorema de Cauchy
     obtain ⟨g, hg⟩ := exists_prime_orderOf_dvd_card 2 hG
     use g
@@ -90,6 +89,6 @@ theorem Reto20260715_b {G : Type*} [Group G] [Fintype G]
     rw [← sq]
     exact ⟨h2, h1⟩
 
-#check pseudoendomorphism_not_endomorphism_existence
+#check exists_pseudoendo_not_endo
 #check Reto20260715_a
 #check Reto20260715_b

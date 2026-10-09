@@ -1,4 +1,4 @@
-import RetosSoftware.Sucesiones
+import RetosSoftware.RetosSoftware.Sucesiones
 import Mathlib.Tactic
 
 /-!
@@ -42,4 +42,3 @@ theorem Reto21 {L : ℝ} {u v : ℕ → ℝ}
     _ ≥ N := hn
 
 #check Reto21
-

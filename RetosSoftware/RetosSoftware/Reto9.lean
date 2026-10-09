@@ -1,4 +1,4 @@
-import RetosSoftware.Sucesiones
+import RetosSoftware.RetosSoftware.Sucesiones
 import Mathlib.Tactic
 
 /-!
@@ -47,4 +47,3 @@ theorem Reto9 {L M : ℝ} {a : ℕ → ℝ}
     _ = ε := add_halves ε
 
 #check Reto9
-

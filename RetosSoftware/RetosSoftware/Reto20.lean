@@ -1,4 +1,4 @@
-import RetosSoftware.Sucesiones
+import RetosSoftware.RetosSoftware.Sucesiones
 import Mathlib.Tactic
 
 /-!
