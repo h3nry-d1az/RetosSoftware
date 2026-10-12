@@ -8,6 +8,9 @@ Matemático'' de análisis.
 def LimSuc (a : ℕ → ℝ) (L : ℝ) : Prop :=
   ∀ ε > 0, ∃ N : ℕ, ∀ n ≥ N, |a n - L| < ε
 
+-- Para abreviar usamos la notación `a ⟹ L` (escrito \==>)
+notation a " ⟹ " L => LimSuc a L
+
 def SucConvergente (a : ℕ → ℝ) : Prop :=
   ∃ L, LimSuc a L
 
@@ -22,4 +25,3 @@ def SucCauchy (a : ℕ → ℝ) : Prop :=
 
 def SubSucesion (v u : ℕ → ℝ) :=
   ∃ φ, StrictMono φ ∧ v = u ∘ φ
-
