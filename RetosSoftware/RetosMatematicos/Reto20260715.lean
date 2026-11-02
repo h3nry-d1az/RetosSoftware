@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 
 /--
+# Enunciado
 Sea G un grupo finito de orden n. Una función φ: G → G es un pseudoendomorfismo
 si φ(xyz) = φ(x)φ(y)φ(z) para cualesquiera x, y, z ∈ G.
 

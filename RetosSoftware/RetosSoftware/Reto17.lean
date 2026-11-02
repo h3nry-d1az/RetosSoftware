@@ -2,6 +2,7 @@ import RetosSoftware.RetosSoftware.Sucesiones
 import Mathlib.Tactic
 
 /-!
+# Enunciado
 Demostrar que las sucesiones convergentes están acotadas; es decir, que si
 existe un L ∈ ℝ tal que L es el límite de la sucesión aₙ, entonces existe un
 M ∈ ℝ tal que para todo n ∈ ℕ, |aₙ| ≤ M.
@@ -9,9 +10,7 @@ M ∈ ℝ tal que para todo n ∈ ℕ, |aₙ| ≤ M.
 Propuesto por José A. Alonso Jiménez.
 Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 
-----------
-Demostración en lenguaje natural:
-
+# Demostración
 Por la existencia de un límite L de aₙ se sabe que para un determinado k, todo
 n ≥ k verifica que |aₙ - L| < 1 (el valor 1 es arbitrario); esto nos da una
 cota superior (en concreto M₂ := máx(|L - 1|, |L + 1|)) para |aₙ|.

@@ -3,6 +3,7 @@ import RetosSoftware.RetosSoftware.Reto21
 import Mathlib.Tactic
 
 /-!
+# Enunciado
 Supongamos que la sucesión cₙ es una mezcla de las sucesiones aₙ y bₙ; es decir,
 que
   (c₀, c₁, c₂, ⋯ ) = (a₀, b₀, a₁, b₁, a₂, b₂, ⋯ ).
@@ -11,9 +12,7 @@ Demostrar que si cₙ converge a L, entonces aₙ y bₙ convergen a L.
 Propuesto por José A. Alonso Jiménez.
 Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 
-----------
-Demostración en lenguaje natural:
-
+# Demostración
 Es evidente que a y b son subsucesiones de c, luego por Reto 21 convergen a L.
 
 También puede verse por que como aₙ = c₂ₙ y bₙ = c₂ₙ₊₁, para cada ε basta tomar

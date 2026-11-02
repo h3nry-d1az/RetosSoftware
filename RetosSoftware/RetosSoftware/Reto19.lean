@@ -2,14 +2,13 @@ import RetosSoftware.RetosSoftware.Sucesiones
 import Mathlib.Tactic
 
 /-!
+# Enunciado
 Demostrar que las sucesiones convergentes son de Cauchy.
 
 Propuesto por José A. Alonso Jiménez.
 Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 
-----------
-Demostración en lenguaje natural:
-
+# Demostración
 Al ser la sucesión dada convergente, para cualquier ε > 0 se tiene un N ∈ ℕ
 a partir del cual todos los elementos de la sucesión están en el intervalo de
 radio ε centrado en L; aₙ ∈ (L-ε, L+ε). El diámetro de este intervalo es 2ε,

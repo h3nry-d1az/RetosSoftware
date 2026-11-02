@@ -2,6 +2,7 @@ import RetosSoftware.RetosSoftware.Sucesiones
 import Mathlib.Tactic
 
 /-!
+# Enunciado
 Una subsucesión se obtiene aplicando a la sucesión original una función de
 extracción; es decir, una función φ : ℕ → ℕ estrictamente creciente. Por
 ejemplo, la subsucesión
@@ -14,9 +15,7 @@ límite que la sucesión.
 Propuesto por José A. Alonso Jiménez.
 Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 
-----------
-Demostración en lenguaje natural:
-
+# Demostración
 Nótese en primer lugar que por ser φ monotónica creciente en ℕ es inmediato que
 φ(n) ≥ n para cualquier n ∈ ℕ.
 

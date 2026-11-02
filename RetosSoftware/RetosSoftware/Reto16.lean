@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 
 /-!
+# Enunciado
 Demostrar que para todo n ∈ ℕ, n(n+1)(2n+1) es divisible por 6.
 
 Propuesto por José A. Alonso Jiménez.

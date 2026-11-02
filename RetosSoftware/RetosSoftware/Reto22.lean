@@ -4,15 +4,14 @@ import RetosSoftware.RetosSoftware.Reto21
 import Mathlib.Tactic
 
 /-!
+# Enunciado
 Demostrar que si una sucesión tiene dos subsucesiones con límites distintos,
 entonces la sucesión no es convergente.
 
 Propuesto por José A. Alonso Jiménez.
 Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 
-----------
-Demostración en lenguaje natural:
-
+# Demostración
 Asumiendo que la sucesión converge a un límite L, tenemos (por el reto 21) que
 las dos subsucesiones convergen a L. Por la unicidad del límite (reto 9) los
 límites de estas son ambos L, luego son iguales entre sí, lo que contradice la

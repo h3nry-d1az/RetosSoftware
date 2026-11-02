@@ -2,15 +2,14 @@ import RetosSoftware.RetosSoftware.Sucesiones
 import Mathlib.Tactic
 
 /-!
+# Enunciado
 Demostrar que si la sucesión aₙ converge a L y M es una cota superior de aₙ
 (es decir, aₙ ≤ M para todo n), entonces L ≤ M.
 
 Propuesto por José A. Alonso Jiménez.
 Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 
-----------
-Demostración en lenguaje natural:
-
+# Demostración
 Por darse que aₙ → L, entonces para todo ε existe N ∈ ℕ a partir del cual
     L - ε < aₙ ≤ M,
 luego L ≤ M, pues de lo contrario se tendría que L > M y por ello

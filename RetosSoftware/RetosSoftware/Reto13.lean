@@ -2,6 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 
 /-!
+# Enunciado
 Demostrar la desigualdad triangular inversa; es decir, que para cualesquiera
 números reales x e y, se cumple la relación
   ||x| - |y|| ≤ |x - y|.

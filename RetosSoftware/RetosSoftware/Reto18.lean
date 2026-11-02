@@ -2,15 +2,14 @@ import RetosSoftware.RetosSoftware.Reto17
 import Mathlib.Tactic
 
 /-!
+# Enunciado
 Demostrar que que si la sucesión aₙ converge a L y bₙ converge a M, entonces
 aₙbₙ converge a LM.
 
 Propuesto por José A. Alonso Jiménez.
 Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 
-----------
-Demostración en lenguaje natural:
-
+# Demostración
 Se empieza probando el caso particular en el que alguno de los dos límites es
 0, sin pérdida de generalidad sea lím aₙ = 0. Se busca que para todo ε > 0
 exista N ∈ ℕ tal que n ≥ ℕ implique que

@@ -4,6 +4,7 @@ import RetosSoftware.RetosSoftware.Reto23
 import Mathlib.Tactic
 
 /-!
+# Enunciado
 Usando el Reto 22 (que afirma que si una sucesión tiene dos subsucesiones que
 convergen a límites distintos, entonces la sucesión no es convergente) demostrar
 que la sucesión definida por 1, -1, 1, -1, ... no es convergente.
@@ -11,9 +12,7 @@ que la sucesión definida por 1, -1, 1, -1, ... no es convergente.
 Propuesto por José A. Alonso Jiménez.
 Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 
-----------
-Demostración en lenguaje natural:
-
+# Demostración
 La sucesión a₂ₙ converge a 1, mientras que la sucesión a₂ₙ₊₁ converge a -1,
 luego por Reto 22 aₙ diverge.
 -/

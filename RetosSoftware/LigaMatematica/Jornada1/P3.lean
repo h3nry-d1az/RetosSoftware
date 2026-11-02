@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 
 /--
+# Enunciado
 Sea ℕ = {1, 2, 3, ⋯} el conjunto de los enteros positivos. Decimos que una
 función f : ℕ → ℕ es _equilibrada_ si satisface las siguientes dos condiciones
 para todos a, b ∈ ℕ:

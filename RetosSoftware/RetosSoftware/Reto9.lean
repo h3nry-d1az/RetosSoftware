@@ -2,14 +2,13 @@ import RetosSoftware.RetosSoftware.Sucesiones
 import Mathlib.Tactic
 
 /-!
+# Enunciado
 Demostrar que si una sucesión aₙ converge tanto a L como a M, entonces L = M.
 
 Propuesto por José A. Alonso Jiménez.
 Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 
-----------
-Demostración en lenguaje natural:
-
+# Demostración
 Por converger aₙ a L se tiene que existe un N₁ a partir del cual |aₙ - L| < ε/2
 para todo ε; análogamente existe un N₂ para el que |aₙ - M| < ε/2. Así,
   |L - M| = |(L - aₙ) + (aₙ - M)| ≤ |L - aₙ| + |aₙ - M| = ε,

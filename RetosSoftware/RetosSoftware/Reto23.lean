@@ -2,14 +2,13 @@ import RetosSoftware.RetosSoftware.Sucesiones
 import Mathlib.Tactic
 
 /-!
+# Enunciado
 Demostrar que la sucesión constante aₙ = L converge a L.
 
 Propuesto por José A. Alonso Jiménez.
 Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 
-----------
-Demostración en lenguaje natural:
-
+# Demostración
 Dado cualquier ε > 0, podemos tomar N = 0, puesto que para todo n ≥ N
   |aₙ - L| = |L - L| = 0 < ε,
 como se quería demostrar.

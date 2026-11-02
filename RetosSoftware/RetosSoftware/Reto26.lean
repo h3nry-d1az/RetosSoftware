@@ -2,15 +2,14 @@ import RetosSoftware.RetosSoftware.Sucesiones
 import Mathlib.Tactic
 
 /-!
+# Enunciado
 Demostrar que si la sucesión aₙ converge a 0 y la sucesión bₙ está acotada (no
 necesariamente es convergente), entonces la sucesión aₙ·bₙ converge a 0.
 
 Propuesto por José A. Alonso Jiménez.
 Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 
-----------
-Demostración en lenguaje natural:
-
+# Demostración
 Si la cota de bₙ es cero, entonces bₙ = 0 para cualquier n por ser el positivo-
 definido el valor absoluto, en cuyo caso el resultado es trivial y podemos
 tomar N = 0, por ejemplo.
