@@ -14,6 +14,7 @@ import RetosSoftware.RetosSoftware.Reto24
 import RetosSoftware.RetosSoftware.Reto25
 import RetosSoftware.RetosSoftware.Reto26
 import RetosSoftware.RetosSoftware.Reto27
+import RetosSoftware.RetosSoftware.Reto28
 
 import RetosSoftware.RetosMatematicos.Reto20260715
 
