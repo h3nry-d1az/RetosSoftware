@@ -9,16 +9,16 @@ Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 -/
 
 -- 1ª forma
-theorem Reto16_1 {n : ℕ} : 6 ∣ n * (n + 1) * (2*n + 1) := by
+theorem reto16₁ {n : ℕ} : 6 ∣ n * (n + 1) * (2*n + 1) := by
   rw [← ZMod.natCast_eq_zero_iff]
   push_cast
   generalize (n : ZMod 6) = k
   fin_cases k <;> rfl
 
-#check Reto16_1
+#check reto16₁
 
 -- 2ª forma
-theorem Reto16_2 {n : ℕ} : 6 ∣ n * (n + 1) * (2*n + 1) := by
+theorem reto16₂ {n : ℕ} : 6 ∣ n * (n + 1) * (2*n + 1) := by
   induction n with
   | zero => norm_num
   | succ m hm =>
@@ -29,4 +29,4 @@ theorem Reto16_2 {n : ℕ} : 6 ∣ n * (n + 1) * (2*n + 1) := by
       _ = 6 * t + 6*(m*m + 2*m + 1) := by rw [ht]; ring
       _ = 6 * (t + m*m + 2*m + 1) := by ring
 
-#check Reto16_2
+#check reto16₂

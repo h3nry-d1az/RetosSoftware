@@ -21,13 +21,13 @@ el respectivo N de c.
 
 
 -- Demostración usando el reto 21
-theorem Reto25_1 {a b c : ℕ → ℝ} {L : ℝ}
+theorem reto25₁ {a b c : ℕ → ℝ} {L : ℝ}
   (hc : ∀ n : ℕ, c n = if Even n then a (n / 2) else b ((n - 1) / 2))
   (hL : c ⟹ L)
   : (a ⟹ L) ∧ (b ⟹ L)
   := by
   constructor
-  · apply Reto21 (u := c) (v := a)
+  · apply reto21 (u := c) (v := a)
     · use fun n => 2 * n
       constructor
       · intro m₁ m₂ hm₁m₂
@@ -43,7 +43,7 @@ theorem Reto25_1 {a b c : ℕ → ℝ} {L : ℝ}
             rw [hc]
             simp [this]
     · exact hL
-  · apply Reto21 (u := c) (v := b)
+  · apply reto21 (u := c) (v := b)
     · use fun n => 2 * n + 1
       constructor
       · intro m₁ m₂ hm₁m₂
@@ -59,11 +59,11 @@ theorem Reto25_1 {a b c : ℕ → ℝ} {L : ℝ}
             simp [Nat.not_even_two_mul_add_one m]
     · exact hL
 
-#check Reto25_1
+#check reto25₁
 
 
 -- Demostración nueva
-theorem Reto25_2 {a b c : ℕ → ℝ} {L : ℝ}
+theorem reto25₂ {a b c : ℕ → ℝ} {L : ℝ}
   (hc : ∀ n : ℕ, c n = if Even n then a (n / 2) else b ((n - 1) / 2))
   (hL : c ⟹ L)
   : (a ⟹ L) ∧ (b ⟹ L)
@@ -106,4 +106,4 @@ theorem Reto25_2 {a b c : ℕ → ℝ} {L : ℝ}
       |b n - L| = |c (2 * n + 1) - L| := by rw [h_bc]
       _ < ε := by apply hN; linarith
 
-#check Reto25_2
+#check reto25₂

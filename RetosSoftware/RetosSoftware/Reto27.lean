@@ -22,6 +22,7 @@ que es una contradicción.
 Véase el Reto 20, que es análogo a este.
 -/
 
+namespace Reto27
 lemma le_of_forall_sub_lt {a b : ℝ}
   (h : ∀ ε > 0, a - ε < b)
   : a ≤ b
@@ -32,13 +33,14 @@ lemma le_of_forall_sub_lt {a b : ℝ}
   calc
     b = a - (a - b) := by ring
     _ < b := h (a - b) hab
+end Reto27
 
-theorem Reto27 {a : ℕ → ℝ} {L M : ℝ}
+theorem reto27 {a : ℕ → ℝ} {L M : ℝ}
   (ha : a ⟹ L)
   (hM : a ≫ M)
   : M ≤ L
   := by
-  apply le_of_forall_sub_lt
+  apply Reto27.le_of_forall_sub_lt
   intro ε hε
   obtain ⟨N, hN⟩ := ha ε hε
   calc
@@ -47,4 +49,4 @@ theorem Reto27 {a : ℕ → ℝ} {L M : ℝ}
       obtain ⟨h₁, h₂⟩ := abs_lt.mp (hN N (refl N))
       linarith
 
-#check Reto27
+#check reto27

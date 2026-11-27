@@ -18,7 +18,7 @@ límites de estas son ambos L, luego son iguales entre sí, lo que contradice la
 hipótesis inicial de ser distintos.
 -/
 
-theorem Reto22 {a b₁ b₂ : ℕ → ℝ} {L₁ L₂ : ℝ}
+theorem reto22 {a b₁ b₂ : ℕ → ℝ} {L₁ L₂ : ℝ}
   (hb₁ : SubSucesion b₁ a)
   (hb₂ : SubSucesion b₂ a)
   (hL₁ : LimSuc b₁ L₁)
@@ -28,10 +28,10 @@ theorem Reto22 {a b₁ b₂ : ℕ → ℝ} {L₁ L₂ : ℝ}
   intro ha
   apply h
   obtain ⟨L, hL⟩ := ha
-  let hb₁ := Reto21 hb₁ hL  -- b₁ → L
-  let hb₂ := Reto21 hb₂ hL  -- b₂ → L
-  let hLL₁ := Reto9 hb₁ hL₁ -- L = L₁
-  let hLL₂ := Reto9 hb₂ hL₂ -- L = L₂
+  let hb₁ := reto21 hb₁ hL  -- b₁ → L
+  let hb₂ := reto21 hb₂ hL  -- b₂ → L
+  let hLL₁ := reto9 hb₁ hL₁ -- L = L₁
+  let hLL₂ := reto9 hb₂ hL₂ -- L = L₂
   exact Eq.trans hLL₁.symm hLL₂
 
-#check Reto22
+#check reto22

@@ -23,7 +23,7 @@ inductivamente para demostrar que φ(n) < φ(n + k) para cualquier k ∈ ℕ, lu
   φ(a) < φ(a + (b - a)) = φ(b).
 -/
 
-theorem Reto32 {φ : ℕ → ℝ} (hφ : ∀ n, φ n < φ (n + 1))
+theorem reto32 {φ : ℕ → ℝ} (hφ : ∀ n, φ n < φ (n + 1))
   : StrictMono φ
   := by
   intro a b hab
@@ -42,4 +42,4 @@ theorem Reto32 {φ : ℕ → ℝ} (hφ : ∀ n, φ n < φ (n + 1))
     φ a < φ (a + (b - a)) := this a (b - a) (Nat.sub_pos_of_lt hab)
     _ = φ b := by rw [Nat.add_sub_cancel' (le_of_lt hab)]
 
-#check Reto32
+#check reto32

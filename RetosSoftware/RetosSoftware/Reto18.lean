@@ -40,6 +40,7 @@ definición de ε₁ y ε₂ basta.
 Finalmente, cada εᵢ garantiza un Nᵢ, luego N = max{N₁, N₂}.
 -/
 
+namespace Reto18
 lemma limSuc_zero_prod_limSuc_eq_zero {a b : ℕ → ℝ} {L : ℝ}
   (ha : LimSuc a 0)
   (hb : LimSuc b L)
@@ -65,7 +66,7 @@ lemma limSuc_zero_prod_limSuc_eq_zero {a b : ℕ → ℝ} {L : ℝ}
       · exact abs_nonneg (L + 1)
     linarith
   have hB₂ : ∀ n ≥ N₁, |b n| ≤ B :=
-    fun (n : ℕ) (hn : n ≥ N₁) => abs_sub_le_of_abs_le_max (hN₁ n hn)
+    fun (n : ℕ) (hn : n ≥ N₁) => Reto17.abs_le_max_of_abs_sub_le (hN₁ n hn)
   -- cota superior B para |bₙ|, positiva porque |L+1| y |L-1| alguno es >0
   let ⟨N₂, hN₂⟩ := ha (ε / (2 * B)) (by positivity)
   -- la cota superior para |aₙ| es ε / (2*B)
@@ -81,8 +82,9 @@ lemma limSuc_zero_prod_limSuc_eq_zero {a b : ℕ → ℝ} {L : ℝ}
     _ ≤ ε / (2 * B) * B := by rel [hB₂ n hn₁]
     _ = ε / 2 := by field
     _ < ε := by linarith
+end Reto18
 
-theorem Reto18 {a b : ℕ → ℝ} {L M : ℝ}
+theorem reto18 {a b : ℕ → ℝ} {L M : ℝ}
   (ha : LimSuc a L)
   (hb : LimSuc b M)
   : LimSuc (a*b) (L*M)
@@ -90,12 +92,12 @@ theorem Reto18 {a b : ℕ → ℝ} {L M : ℝ}
   by_cases hL : L = 0
   case pos =>
     rw [hL, zero_mul]
-    exact limSuc_zero_prod_limSuc_eq_zero (Eq.subst hL ha) hb
+    exact Reto18.limSuc_zero_prod_limSuc_eq_zero (Eq.subst hL ha) hb
   -- si L = 0, el lema anterior resuelve la demostración
   by_cases hM : M = 0
   case pos =>
     rw [hM, mul_zero, mul_comm]
-    exact @limSuc_zero_prod_limSuc_eq_zero b a L (Eq.subst hM hb) ha
+    exact @Reto18.limSuc_zero_prod_limSuc_eq_zero b a L (Eq.subst hM hb) ha
   -- ídem si M = 0, tenemos así que |L|, |M| > 0
   have hL : |L| > 0 := by positivity
   have hM : |M| > 0 := by positivity
@@ -128,4 +130,4 @@ theorem Reto18 {a b : ℕ → ℝ} {L M : ℝ}
     _ < ε := by linarith
     _ ≤ ε₀ := min_le_left ε₀ (4 * |L| * |M|)
 
-#check Reto18
+#check reto18

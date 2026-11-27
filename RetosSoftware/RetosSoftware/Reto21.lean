@@ -25,7 +25,7 @@ el primer hecho también |u(φ(n)) - L| < ε, luego es suficiente tomar este N.
 Como se quería demostrar.
 -/
 
-theorem Reto21 {L : ℝ} {u v : ℕ → ℝ}
+theorem reto21 {L : ℝ} {u v : ℕ → ℝ}
   (hv : SubSucesion v u)
   (hL : LimSuc u L)
   : LimSuc v L := by
@@ -40,4 +40,4 @@ theorem Reto21 {L : ℝ} {u v : ℕ → ℝ}
     φ n ≥ n := StrictMono.le_apply (x := n) hφ₁
     _ ≥ N := hn
 
-#check Reto21
+#check reto21

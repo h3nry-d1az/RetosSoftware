@@ -14,7 +14,7 @@ Dado cualquier ε > 0, podemos tomar N = 0, puesto que para todo n ≥ N
 como se quería demostrar.
 -/
 
-theorem Reto23 {L : ℝ} {a : ℕ → ℝ}
+theorem reto23 {L : ℝ} {a : ℕ → ℝ}
   (ha : ∀ n, a n = L)
   : a ⟹ L := by
   intro ε hε
@@ -25,4 +25,4 @@ theorem Reto23 {L : ℝ} {a : ℕ → ℝ}
     _ = 0 := by norm_num
     _ < ε := hε
 
-#check Reto23
+#check reto23

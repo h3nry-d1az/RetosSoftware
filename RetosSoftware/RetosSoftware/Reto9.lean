@@ -15,6 +15,7 @@ para todo ε; análogamente existe un N₂ para el que |aₙ - M| < ε/2. Así,
 luego L = M, QED.
 -/
 
+namespace Reto9
 lemma abs_sub_le_forall_of_eq {x y : ℝ}
   (hε : ∀ ε > 0, |x - y| ≤ ε)
   : x = y := by
@@ -27,12 +28,13 @@ lemma abs_sub_le_forall_of_eq {x y : ℝ}
     rw [abs_eq_zero] at h
     rw [sub_eq_zero] at h
     exact h
+end Reto9
 
-theorem Reto9 {L M : ℝ} {a : ℕ → ℝ}
+theorem reto9 {L M : ℝ} {a : ℕ → ℝ}
   (hL : LimSuc a L)
   (hM : LimSuc a M)
   : L = M := by
-  apply abs_sub_le_forall_of_eq
+  apply Reto9.abs_sub_le_forall_of_eq
   intro ε hε
   obtain ⟨N₁, hN₁⟩ := hL (ε / 2) (half_pos hε)
   obtain ⟨N₂, hN₂⟩ := hM (ε / 2) (half_pos hε)
@@ -45,4 +47,4 @@ theorem Reto9 {L M : ℝ} {a : ℕ → ℝ}
     _ ≤ ε / 2 + ε / 2 := by rel [hN₂ N (le_max_right N₁ N₂)]
     _ = ε := add_halves ε
 
-#check Reto9
+#check reto9

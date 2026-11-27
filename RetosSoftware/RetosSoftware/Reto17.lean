@@ -22,13 +22,15 @@ M₁ := máx {|aₙ| : n < k}.
 Finalmente, para que ambas desigualdades se cumplan se elige M := máx(M₁, M₂).
 -/
 
-lemma abs_sub_le_of_abs_le_max {a b c : ℝ} (h : |a - b| < c)
+namespace Reto17
+lemma abs_le_max_of_abs_sub_le {a b c : ℝ} (h : |a - b| < c)
   : |a| ≤ max |b - c| |b + c|
   := by
   obtain ⟨h₁, h₂⟩ := abs_sub_lt_iff.mp h -- |a - b| < c ⊢ b - c < a < b + c
   apply abs_le_max_abs_abs <;> linarith
+end Reto17
 
-theorem Reto17 {a : ℕ → ℝ} (ha : SucConvergente a) : SucAcotada a := by
+theorem reto17 {a : ℕ → ℝ} (ha : SucConvergente a) : SucAcotada a := by
   obtain ⟨L, hL⟩ := ha
   obtain ⟨k, hk⟩ := hL 1 (by norm_num)
   let S := (Finset.range k.succ).image (abs ∘ a) -- S := {|aₙ| : n ≤ k}
@@ -55,6 +57,6 @@ theorem Reto17 {a : ℕ → ℝ} (ha : SucConvergente a) : SucAcotada a := by
       apply Nat.lt_succ_iff.mpr
       exact Nat.le_of_lt hn
     · rfl
-  · exact le_max_of_le_right (abs_sub_le_of_abs_le_max (hk n hn))
+  · exact le_max_of_le_right (Reto17.abs_le_max_of_abs_sub_le (hk n hn))
 
-#check Reto17
+#check reto17

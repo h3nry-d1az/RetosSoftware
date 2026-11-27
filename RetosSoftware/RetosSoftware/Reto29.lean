@@ -16,7 +16,7 @@ luego tomando N = máx(N₁, N₂) donde N₁ y N₂ son aquellos que hacen que 
 sumandos sean menores que ε/2 se tiene que lo anterior es menor que ε.
 -/
 
-theorem Reto29 {a b : ℕ → ℝ}
+theorem reto29 {a b : ℕ → ℝ}
   (ha : SucCauchy a)
   (hb : SucCauchy b)
   : SucCauchy (a + b)
@@ -37,4 +37,4 @@ theorem Reto29 {a b : ℕ → ℝ}
                                  hN₂ p (trans hp hN₂N) q (trans hq hN₂N)]
     _ = ε := add_halves ε
 
-#check Reto29
+#check reto29

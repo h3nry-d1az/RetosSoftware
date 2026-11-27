@@ -20,7 +20,7 @@ N resultante de imponer ε' = ε / (2 * M) a aₙ, y de esta forma se verifica q
 como se quería demostrar.
 -/
 
-theorem Reto26 {a b : ℕ → ℝ}
+theorem reto26 {a b : ℕ → ℝ}
   (ha : a ⟹ 0)
   (hb : SucAcotada b)
   : (a * b) ⟹ 0
@@ -62,4 +62,4 @@ theorem Reto26 {a b : ℕ → ℝ}
     _ = ε / 2 := by field
     _ < ε := half_lt_self hε
 
-#check Reto26
+#check reto26

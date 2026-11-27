@@ -11,7 +11,7 @@ Propuesto por José A. Alonso Jiménez.
 Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 -/
 
-theorem Reto13 {x y : ℝ} : |(|x| - |y|)| ≤ |x - y| := by
+theorem reto13 {x y : ℝ} : |(|x| - |y|)| ≤ |x - y| := by
   obtain hx | hx := le_or_gt 0 x
   -- Caso 1: x ≥ 0
   · rw [abs_of_nonneg hx]
@@ -52,4 +52,4 @@ theorem Reto13 {x y : ℝ} : |(|x| - |y|)| ≤ |x - y| := by
         ← sub_eq_add_neg,
         neg_sub]
 
-#check Reto13
+#check reto13

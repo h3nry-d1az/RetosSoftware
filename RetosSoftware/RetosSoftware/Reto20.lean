@@ -17,6 +17,7 @@ luego L ≤ M, pues de lo contrario se tendría que L > M y por ello
 que supone una contradicción.
 -/
 
+namespace Reto20
 lemma le_forall_epsilon_to_le {a b : ℝ} (hab : ∀ ε > 0, a - ε ≤ b) : a ≤ b
   := by
   by_contra h
@@ -28,24 +29,25 @@ lemma le_forall_epsilon_to_le {a b : ℝ} (hab : ∀ ε > 0, a - ε ≤ b) : a �
       linarith
     _ < b + (a - b) := by linarith
     _ = a := by norm_num
+end Reto20
 
 /-- La primera demostración es idéntica a la segunda en concepto, solo que
 no utiliza tácticas. -/
-theorem Reto20_1 {L M : ℝ} {a : ℕ → ℝ} (hL : LimSuc a L) (hM : CotaSup a M)
+theorem reto20₁ {L M : ℝ} {a : ℕ → ℝ} (hL : LimSuc a L) (hM : CotaSup a M)
   : L ≤ M
-  := le_forall_epsilon_to_le fun ε => fun hε =>
+  := Reto20.le_forall_epsilon_to_le fun ε => fun hε =>
     let ⟨N, hN⟩ := hL ε hε
     have h₁ : L - ε ≤ a N :=
       le_of_lt (sub_lt_of_abs_sub_lt_left (hN N (le_refl N)))
     have h₂ : a N ≤ M := hM N
     show _ from (LE.le.trans h₁ h₂)
 
-#check Reto20_1
+#check reto20₁
 
-theorem Reto20_2 {L M : ℝ} {a : ℕ → ℝ} (hL : LimSuc a L) (hM : CotaSup a M)
+theorem reto20₂ {L M : ℝ} {a : ℕ → ℝ} (hL : LimSuc a L) (hM : CotaSup a M)
   : L ≤ M
   := by
-  apply le_forall_epsilon_to_le
+  apply Reto20.le_forall_epsilon_to_le
   intro ε hε
   obtain ⟨N, hN⟩ := hL ε hε
   have h : |a N - L| < ε := hN N (by rfl)
@@ -54,4 +56,4 @@ theorem Reto20_2 {L M : ℝ} {a : ℕ → ℝ} (hL : LimSuc a L) (hM : CotaSup a
     _ ≤ a N := by linarith
     _ ≤ M := hM N
 
-#check Reto20_2
+#check reto20₂

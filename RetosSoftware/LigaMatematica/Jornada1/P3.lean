@@ -15,7 +15,7 @@ Propuesto en la Liga Matemática de la ANEM: jornada 1, problema 3.
 Solución de Henry Díaz Bordón <henrydiazbordon@gmail.com>.
 -/
 
-theorem Jornada1_P3 {f : ℕ → ℕ}
+theorem jornada1_P3 {f : ℕ → ℕ}
   (hf₀ : ∀ x > 0, f x > 0)
   (hf₁ : ∀ a, ∀ b ≥ a, f a ≤ f b)
   (hf₂ : ∀ a, ∀ b, f (a * f b) = b * f a)
@@ -66,4 +66,4 @@ theorem Jornada1_P3 {f : ℕ → ℕ}
       exfalso
       grind
 
-#check Jornada1_P3
+#check jornada1_P3

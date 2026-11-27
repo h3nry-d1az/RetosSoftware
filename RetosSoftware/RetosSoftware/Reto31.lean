@@ -18,7 +18,7 @@ se verifica que
 lo que supone una contradicción.
 -/
 
-theorem Reto31 {a : ℕ → ℝ} (ha : ∀ n, a n = n)
+theorem reto31 {a : ℕ → ℝ} (ha : ∀ n, a n = n)
   : ¬∃ b, SubSucesion b a ∧ SucConvergente b
   := by
   intro ⟨b, ⟨φ, hφ₁, hφ₂⟩, ⟨L, hL⟩⟩
@@ -36,4 +36,4 @@ theorem Reto31 {a : ℕ → ℝ} (ha : ∀ n, a n = n)
     _ ≥ L + 1 - L := by rel [Nat.le_ceil L]
     _ = 1 := by rw [add_comm, ← add_sub, sub_self, add_zero]
 
-#check Reto31
+#check reto31

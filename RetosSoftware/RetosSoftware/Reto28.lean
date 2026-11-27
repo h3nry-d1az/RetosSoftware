@@ -13,7 +13,7 @@ Asumiendo que |aₙ| ≤ M para algún M ∈ ℝ⁺, tenemos que M+1 ≤ M, que 
 contradicción.
 -/
 
-theorem Reto28 {a : ℕ → ℝ} (ha : ∀ n : ℕ, a n = n) : ¬SucAcotada a := by
+theorem reto28 {a : ℕ → ℝ} (ha : ∀ n : ℕ, a n = n) : ¬SucAcotada a := by
   intro ⟨M, hM⟩
   have hM_pos : M ≥ 0 := LE.le.trans (abs_nonneg (a 0)) (hM 0)
   have h₁ := hM (Nat.ceil M + 1)
@@ -26,4 +26,4 @@ theorem Reto28 {a : ℕ → ℝ} (ha : ∀ n : ℕ, a n = n) : ¬SucAcotada a :=
   push_cast at h₁
   exact (not_lt_of_ge h₁) h₂
 
-#check Reto28
+#check reto28

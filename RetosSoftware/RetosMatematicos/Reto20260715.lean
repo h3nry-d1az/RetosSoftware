@@ -1,6 +1,6 @@
 import Mathlib.Tactic
 
-/--
+/-!
 # Enunciado
 Sea G un grupo finito de orden n. Una función φ: G → G es un pseudoendomorfismo
 si φ(xyz) = φ(x)φ(y)φ(z) para cualesquiera x, y, z ∈ G.
@@ -16,6 +16,7 @@ Para una solución en lenguaje natural, véase mi solución en el canal de
 Telegram «Retos Matemáticos»: https://t.me/Retos_Matematicos/1/141633.
 -/
 
+namespace Reto20260715
 theorem exists_pseudoendo_not_endo {G : Type*} [Group G]
   : (∃ φ : G → G, (∀ (x y z : G), φ (x * y * z) = φ (x) * φ (y) * φ (z))
     ∧ (∃ (x y : G), φ (x * y) ≠ φ (x) * φ (y)))
@@ -62,14 +63,15 @@ theorem exists_pseudoendo_not_endo {G : Type*} [Group G]
           _ = g * g⁻¹ := by rfl
           _ = 1 := by rw [mul_inv_cancel]
       exact hg1 hg3
+end Reto20260715
 
-theorem Reto20260715_a {G : Type*} [Group G] [Fintype G]
+theorem reto20260715_a {G : Type*} [Group G] [Fintype G]
   (hG : ¬ (2 ∣ Fintype.card G))
   : ¬ (∃ φ : G → G, (∀ (x y z : G), φ (x * y * z) = φ (x) * φ (y) * φ (z))
         ∧ (∃ (x y : G), φ (x * y) ≠ φ (x) * φ (y)))
   := by
     intro hφ
-    obtain ⟨g, hg1, hg2⟩ := exists_pseudoendo_not_endo.mp hφ
+    obtain ⟨g, hg1, hg2⟩ := Reto20260715.exists_pseudoendo_not_endo.mp hφ
     exact hG (by
       -- he aquí el teorema de Lagrange
       have h' : orderOf g ∣ Fintype.card G := orderOf_dvd_card
@@ -77,12 +79,12 @@ theorem Reto20260715_a {G : Type*} [Group G] [Fintype G]
       rw [orderOf_eq_prime hg2 hg1] at h'
       exact h')
 
-theorem Reto20260715_b {G : Type*} [Group G] [Fintype G]
+theorem reto20260715_b {G : Type*} [Group G] [Fintype G]
   (hG : 2 ∣ Fintype.card G)
   : (∃ φ : G → G, (∀ (x y z : G), φ (x * y * z) = φ (x) * φ (y) * φ (z))
       ∧ (∃ (x y : G), φ (x * y) ≠ φ (x) * φ (y)))
   := by
-    apply exists_pseudoendo_not_endo.mpr
+    apply Reto20260715.exists_pseudoendo_not_endo.mpr
     -- y aquí el teorema de Cauchy
     obtain ⟨g, hg⟩ := exists_prime_orderOf_dvd_card 2 hG
     use g
@@ -90,6 +92,6 @@ theorem Reto20260715_b {G : Type*} [Group G] [Fintype G]
     rw [← sq]
     exact ⟨h2, h1⟩
 
-#check exists_pseudoendo_not_endo
-#check Reto20260715_a
-#check Reto20260715_b
+#check Reto20260715.exists_pseudoendo_not_endo
+#check reto20260715_a
+#check reto20260715_b

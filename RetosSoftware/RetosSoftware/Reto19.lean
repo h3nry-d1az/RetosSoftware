@@ -17,7 +17,7 @@ luego cualesquiera dos valores están a una distancia de a lo sumo esta cantidad
 el N correspondiente a ε/2 en la hipótesis de convergencia.
 -/
 
-theorem Reto19 {a : ℕ → ℝ} (ha : SucConvergente a) : SucCauchy a := by
+theorem reto19 {a : ℕ → ℝ} (ha : SucConvergente a) : SucCauchy a := by
   intro ε hε
   obtain ⟨L, hL⟩ := ha
   obtain ⟨N, hN⟩ := hL (ε/2) (by positivity)
@@ -40,4 +40,4 @@ theorem Reto19 {a : ℕ → ℝ} (ha : SucConvergente a) : SucCauchy a := by
       _ < (ε/2) - -(ε/2) := by rel [sub_lt_sub_left (c := ε/2) h₂.left]
       _ = ε := by field
 
-#check Reto19
+#check reto19
